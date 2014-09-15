@@ -17,7 +17,7 @@ task wrapper(type: Wrapper) {
 
 task gitPush(type:Exec, dependsOn:"gitCommitAll") {
 	def cmd = ['git', 'push']
-	println "\n"
+	//println "\n"
 	commandLine cmd
 }
 

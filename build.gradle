@@ -15,7 +15,7 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '2.1'
 }
 
-task gitPush(type:Exec) {
+task gitPush(type:Exec, dependsOn:"gitCommitAll") {
 	def cmd = ['git', 'push']
 	commandLine cmd
 }
@@ -24,7 +24,7 @@ task gitCommitAll(type:Exec) {
 	def console = System.console()
 	def commitMsg
 	if (console) {
-		commitMsg = console.readLine('> GitHub Commit Message: : ')
+		commitMsg = console.readLine('> GitHub Commit Message: ')
 		def cmd = ['git', 'commit', '-a', '-m', commitMsg]
 		commandLine cmd
 	} else {

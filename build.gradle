@@ -1,4 +1,10 @@
 apply plugin: 'java'
+
+jar {
+    baseName = 'OFD-HTML5-Generator'
+    version = '0.0.1'
+}
+
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.1'
 }

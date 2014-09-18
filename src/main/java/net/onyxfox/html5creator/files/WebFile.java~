@@ -1,0 +1,6 @@
+package net.onyxfox.html5creator.files;
+
+public class WebFile implements IWebFile
+{
+	public WebFile
+}

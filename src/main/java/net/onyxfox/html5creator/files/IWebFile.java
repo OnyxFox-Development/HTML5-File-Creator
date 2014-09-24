@@ -1,8 +1,10 @@
-package net.onyxfox.html5creators.files;
+package net.onyxfox.html5creator.files;
 
 public interface IWebFile
 {
-	public void create();
-	
-	public void setPageTitle(String title);
+	public void create ();
+
+	public void setPageTitle ( String title );
+
+	public void writeOut ();
 }

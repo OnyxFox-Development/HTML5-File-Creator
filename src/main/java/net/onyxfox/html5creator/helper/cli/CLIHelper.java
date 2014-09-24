@@ -1,23 +1,21 @@
 package net.onyxfox.html5creator.helper.cli;
 
-import java.util.Scanner;
-
 public class CLIHelper
 {
-	public static void print(String text, boolean newline)
+	public static void print ( String text, boolean newline )
 	{
-		if (newline)
+		if ( newline )
 		{
-			System.out.println(text);
+			System.out.println( text );
 		}
 		else
 		{
-			System.out.print(text);
+			System.out.print( text );
 		}
 	}
-	
-	public static void print(String text)
+
+	public static void print ( String text )
 	{
-		print(text, true);
+		print( text, true );
 	}
 }

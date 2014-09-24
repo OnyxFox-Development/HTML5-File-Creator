@@ -1,30 +1,31 @@
 package net.onyxfox.html5creator;
 
-import java.util.Scanner;
-import net.onyxfox.html5creator.helper.cli.*;
-import net.onyxfox.html5creator.files.*;
+import net.onyxfox.html5creator.files.HTMLFile;
+import net.onyxfox.html5creator.files.IWebFile;
+import net.onyxfox.html5creator.files.PHPFile;
+import net.onyxfox.html5creator.helper.cli.UserInputHelper;
 
 public class HTML5Creator
 {
-	public static void main(String[] args)
+	public static void main ( String[] args )
 	{
 		//CLIHelper.print("Current directory: " + System.getProperty("user.dir"));
-		String fileBaseName = UserInputHelper.basicPrompt("Filename: ");
+		String fileBaseName = UserInputHelper.promptBasic( "Filename" );
 		//CLIHelper.print(String.format("You set %s as the filename", filename));
-		
-		String fileType = UserInputHelper.multipleChoicePrompt("Filetype:", "html", "php");
+
+		String fileType = UserInputHelper.promptMultipleChoice( "Filetype", "html", "php" );
 		//CLIHelper.print(String.format("Filetype: %s", filetype));
-		
-		String filename = String.format("%s.%s", fileBaseName, fileType);
-		
-		if (filetype == "html")
+
+		String filename = String.format( "%s.%s", fileBaseName, fileType );
+
+		if ( fileType.equals( "html" ) )
 		{
-			HTMLFile file = new HTMLFile(filename);
+			IWebFile file = new HTMLFile( filename );
 			file.create();
 		}
-		else if (filetype == "php")
+		else if ( fileType.equals( "php" ) )
 		{
-			PHPFile file = new PHPFile(filename);
+			IWebFile file = new PHPFile( filename );
 			file.create();
 		}
 	}

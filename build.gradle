@@ -1,16 +1,17 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'idea'
 
 mainClassName = "net.onyxfox.html5creator.HTML5Creator"
 
 jar {
-	baseName = 'OFD-HTML5-Generator'
-	version = '0.0.1'
-	manifest {
-		attributes 'Main-Class': 'net.onyxfox.html5creator.HTML5Creator'
-	}
+    baseName = 'OFD-HTML5-Generator'
+    version = '0.0.1'
+    manifest {
+        attributes 'Main-Class': 'net.onyxfox.html5creator.HTML5Creator'
+    }
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '2.1'
+    gradleVersion = '2.1'
 }
